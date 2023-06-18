@@ -126,7 +126,7 @@ Por is usamos el font dentro del proyecto
   /* 16px */
   --fs-500: 1.25rem;
   /* 20px */
-  --fs-550: 1.35rem;
+  --fs-550: 1.375rem;
   /* 22px */
   --fs-600: 1.5rem;
   /* 24px */
@@ -169,9 +169,7 @@ a {
   color: inherit;
 }
 
-section {
-  padding: var(--fs-400);
-}
+
 
 .tudo {
   background-color: var(--clr-background-100);
@@ -197,18 +195,28 @@ section {
   display: none;
 }
 
-@media screen and (min-width: 48em) {
-  .menu__list {
-    display: flex;
-  }
-}
-
 .menu__list__item__contato {
   font-size: var(--fs-300);
   font-weight: var(--fw-thin);
 }
 
+@media screen and (min-width: 48em) {
+  .menu__list {
+    /* display: flex; */
+  }
+
+  .menu__list__item__contato {
+    font-weight: var(--fw-bold);
+  }
+}
+
+
+
 /* title section */
+
+.title {
+  padding: var(--fs-400);
+}
 
 .title__div {
   display: flex;
@@ -255,10 +263,45 @@ section {
   display: inline-block;
 }
 
+@media screen and (min-width: 48em) {
+  .title {
+    padding: var(--size-600);
+  }
+
+  .title__div {
+    flex-direction: row-reverse;
+    gap: var(--size-600);
+  }
+
+  .title__profile {
+    width: 146px;
+    align-self: flex-start;
+  }
+
+  .title__container {
+    gap: var(--size-200);
+  }
+
+  .title__subsection {
+    font-size: inherit;
+  }
+
+  .title__network {
+    justify-content: initial;
+    gap: var(--size-600);
+  }
+
+
+  .title__network__item {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+}
+
 /* Sobre mi */
 .about {
   background-color: var(--clr-background-200);
-
+  padding: var(--size-400);
 }
 
 .about__container {
@@ -281,9 +324,17 @@ section {
   align-self: flex-start;
 }
 
+@media screen and (min-width: 48em) {
+  .about {
+    padding: var(--size-600);
+  }
+}
+
 /* Skills */
 
-.skills {}
+.skills {
+  padding: var(--size-400);
+}
 
 .skills__title {
   font-size: var(--fs-550);
@@ -301,7 +352,7 @@ section {
 
 .skills__box {
   padding: var(--size-400);
-  flex: 1 0 156px;
+  flex: 1 0 33.33%;
   height: 118px;
   background-color: var(--clr-neutral-100);
   display: flex;
@@ -310,16 +361,34 @@ section {
 
 .skills__img {
   margin-block-end: var(--size-200);
-
 }
 
 .skills__name {
   font-weight: var(--fw-bold);
 }
 
+@media screen and (max-width: 22.49875em) {
+  .skills__box {
+    flex-basis: 50%;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .skills {
+    padding: var(--size-600);
+  }
+
+  .skills__box {
+    padding: var(--size-400);
+    flex: 1 0 25%;
+  }
+}
+
 /* Hobbies */
 
-.hobbies {}
+.hobbies {
+  padding: var(--size-400);
+}
 
 .hobbies__title {
   font-size: var(--fs-550);
@@ -337,9 +406,11 @@ section {
 
 .hobbies__box {
   padding: var(--size-400);
-  flex: 1 0 156px;
-  height: 168px;
+  flex: 1 0 33.33%;
+  height: 118px;
   background-color: var(--clr-neutral-100);
+  display: flex;
+  align-items: flex-end;
 }
 
 .hobbies__img {
@@ -349,6 +420,24 @@ section {
 
 .hobbies__name {
   font-weight: var(--fw-bold);
+}
+
+
+@media screen and (max-width: 22.49875em) {
+  .hobbies__box {
+    flex-basis: 50%;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .hobbies {
+    padding: var(--size-600);
+  }
+
+  .hobbies__box {
+    padding: var(--size-400);
+    flex: 1 0 25%;
+  }
 }
 
 /* Formación Académica */
@@ -380,10 +469,21 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* min-height: 118px; */
   aspect-ratio: 148 / 59;
-  padding-block: var(--size-400);
-  padding-inline: calc(var(--size-900) + var(--size-400));
+  padding: var(--size-400) var(--size-600);
   background-color: var(--clr-neutral-100);
+}
+
+@media screen and (min-width: 48em) {
+  .academic__courses {
+    flex-direction: row;
+  }
+
+  .academic__courses__item__img {
+    padding: var(--size-400) var(--size-800);
+    aspect-ratio: 112 / 59;
+  }
 }
 
 /* Experiencia laboral */
@@ -493,7 +593,7 @@ section {
 
   font-weight: var(--fw-thin);
   line-height: 1.25;
-  padding: 1em 1em;
+  padding: 1em;
 }
 
 .formcontato__input::placeholder,
