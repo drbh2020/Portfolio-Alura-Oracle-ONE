@@ -132,6 +132,9 @@ Por is usamos el font dentro del proyecto
   /* 24px */
   --fs-700: 1.75rem;
   /* 28px */
+  --fs-800: 2rem;
+  --fs-900: 3rem;
+  --fs-950: 3.25rem;
 
   /* sizes */
 
@@ -147,6 +150,8 @@ Por is usamos el font dentro del proyecto
   --size-800: 4rem;
   --size-900: 5rem;
   --size-950: 5.625rem;
+
+  --max-width: 1136px;
 }
 
 /* General Styles */
@@ -179,7 +184,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--fs-400);
+  padding: var(--size-400);
 }
 
 .menu__header {
@@ -201,15 +206,36 @@ a {
 }
 
 @media screen and (min-width: 48em) {
-  .menu__list {
-    /* display: flex; */
+  .menu {
+    padding: var(--size-500);
   }
-
   .menu__list__item__contato {
     font-weight: var(--fw-bold);
   }
 }
 
+
+@media screen and (min-width: 64em) {
+  .menu {
+    padding-block: var(--size-600);
+    padding-inline: max(calc(50% - (var(--max-width) / 2)), var(--size-600));
+  }
+  .menu__list {
+    display: flex;
+  }
+
+  .menu__list__item {
+    margin-inline-start: var(--size-600);
+  }
+
+  .menu__list__item:last-of-type {
+    font-weight: var(--fw-bold);
+  }
+
+  .menu__list__item__contato {
+    display: none;
+  }
+}
 
 
 /* title section */
@@ -275,7 +301,6 @@ a {
 
   .title__profile {
     width: 146px;
-    align-self: flex-start;
   }
 
   .title__container {
@@ -295,6 +320,36 @@ a {
   .title__network__item {
     font-size: inherit;
     font-weight: inherit;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .title {
+    padding-block: var(--size-800);
+    padding-inline: max(calc(50% - (var(--max-width) / 2)), var(--size-600));
+  }
+  
+  .title__div {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: var(--size-400);
+  }
+
+  .title__profile {
+    width: 368px;
+  }
+
+  .title__container {
+    gap: var(--size-500);
+  }
+  
+  .title__bio {
+    font-size: var(--fs-950);
+    font-weight: var(--fw-bold);
+  }
+
+  .title__subsection {
+    font-size: var(--fs-550);
   }
 }
 
@@ -330,6 +385,22 @@ a {
   }
 }
 
+@media screen and (min-width: 64em) {
+  .about {
+    padding-block: var(--size-800);
+    padding-inline: max(calc(50% - (var(--max-width) / 2)), var(--size-600));  
+  }
+  
+  .about__title {
+    font-size: var(--fs-800);
+  }
+  
+  .about__paragraph {
+    font-size: var(--fs-400);
+    max-width: 76.5ch;
+  }
+}
+
 /* Skills */
 
 .skills {
@@ -339,7 +410,7 @@ a {
 .skills__title {
   font-size: var(--fs-550);
   font-weight: var(--fw-bold);
-  margin-block-end: 1rem;
+  margin-block-end: var(--size-400);
   text-align: center;
 }
 
@@ -378,12 +449,31 @@ a {
     padding: var(--size-600);
   }
 
+  .skills__title {
+    margin-block-end: var(--size-600);
+  }
+
   .skills__box {
     padding: var(--size-400);
     flex: 1 0 25%;
   }
 }
 
+@media screen and (min-width: 64em) {
+  .skills {
+    padding-block: var(--size-600) var(--size-650);
+    padding-inline: max(calc(50% - (var(--max-width) / 2)), var(--size-600));  
+  }
+  
+  .skills__title {
+    font-size: var(--fs-800);
+  }
+
+  .skills__box {
+    flex: 1;
+    height: 174px;
+  }
+}
 /* Hobbies */
 
 .hobbies {
@@ -434,9 +524,29 @@ a {
     padding: var(--size-600);
   }
 
+  .hobbies__title {
+    margin-block-end: var(--size-600);
+  }
+
   .hobbies__box {
     padding: var(--size-400);
     flex: 1 0 25%;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .hobbies {
+    padding-block: var(--size-650) var(--size-900);
+    padding-inline: max(calc(50% - (var(--max-width) / 2)), var(--size-600));  
+  }
+
+  .hobbies__title {
+    font-size: var(--fs-800);
+  }
+  
+  .hobbies__box {
+    flex: 1;
+    height: 174px;
   }
 }
 
@@ -456,6 +566,7 @@ a {
 .academic__courses {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: var(--size-400);
 }
 
@@ -463,6 +574,14 @@ a {
   display: flex;
   flex-direction: column;
   gap: var(--size-200);
+}
+
+.academic__courses__item__title {
+  font-weight: var(--fw-bold);
+}
+
+.academic__courses__item__subtitle {
+  font-size: var(--fs-300);
 }
 
 .academic__courses__item__img {
@@ -483,6 +602,33 @@ a {
   .academic__courses__item__img {
     padding: var(--size-400) var(--size-800);
     aspect-ratio: 112 / 59;
+  }
+}
+
+@media screen and (min-width: 64em) {
+
+  .academic {
+    padding-block: var(--size-900);
+    padding-inline: max(calc(50% - (var(--max-width) / 2)), var(--size-600));  
+  }
+
+  .academic__title {
+    margin-block-end: var(--size-600);
+    font-size: var(--fs-800);
+  }
+  
+  
+  .academic__courses__item__title {
+    font-size: var(--fs-550);
+  }
+
+  .academic__courses__item__subtitle {
+    font-size: var(--fs-400);
+  }
+
+  .academic__courses__item__img {
+    padding: var(--size-400) var(--size-800);
+    aspect-ratio: 184 / 143;
   }
 }
 
@@ -524,7 +670,6 @@ a {
 }
 
 .experience__text {
-  font-family: Raleway;
   font-weight: var(--fw-regular);
   font-size: var(--fs-300);
 }
@@ -549,6 +694,48 @@ a {
   background-color: var(--clr-primary-400);
   color: var(--clr-neutral-100);
 }
+
+@media screen and (min-width: 64em) {
+
+  .experience {
+    padding-block: var(--size-600);
+    padding-inline: max(calc(50% - (var(--max-width) / 2)), var(--size-600));  
+  }
+
+  .experience__section__title {
+    margin-block-end: var(--size-600);
+    font-size: var(--fs-800);
+  }
+
+  .experiencie__box, .experience__box {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--size-200);
+  }
+  
+  .experience__title {
+    font-size: var(--fs-550);
+  }
+  
+  .experience__text {
+    font-size: var(--fs-400);
+  }
+  
+  .experience__description {
+    font-size: var(--fs-400);
+    font-weight: var(--fw-thin);
+  }
+  
+  .experiencia__botao--repo {
+    padding: 1em;
+  }
+  
+  .experience__botao--demo {
+    padding: 1em;
+  }
+}
+
+
 
 
 /* Contacto */
@@ -593,7 +780,7 @@ a {
 
   font-weight: var(--fw-thin);
   line-height: 1.25;
-  padding: 1em;
+  padding: 1em 0.75em;
 }
 
 .formcontato__input::placeholder,
@@ -608,7 +795,38 @@ a {
   padding: 0.75em 1em;
   background-color: var(--clr-primary-400);
   color: var(--clr-neutral-100);
+  font-weight: var(--fw-semibold);
 }
+
+@media screen and (min-width: 64em) {
+  .formcontato--esquerda {
+    display: inherit;
+  }
+
+  .formcontato {
+    background-color: var(--clr-background-200);
+    padding-block: var(--size-800);
+    padding-inline: max(calc(50% - (var(--max-width) / 2)), var(--size-600));  
+  }
+  
+
+  .formcontato__contacto {
+    display: flex;
+    justify-content: center;
+    gap: var(--size-400);
+    padding-block-start: var(--size-800);
+  }
+  
+  .formcontato__title {
+    font-size: var(--fs-800);
+  }
+
+  .formcontato__botao {
+    padding: 1em;
+  }
+
+}
+
 
 /* Footer */
 
