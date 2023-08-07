@@ -155,6 +155,11 @@ Por is usamos el font dentro del proyecto
 }
 
 /* General Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+
 body {
   font-size: var(--fs-400);
   font-family: var(--ff-default);
@@ -175,7 +180,7 @@ a {
 }
 
 
-
+/* Personalized styles */
 .tudo {
   background-color: var(--clr-background-100);
 }
@@ -251,6 +256,7 @@ a {
 }
 
 .title__profile {
+  border-radius: 50%;
   width: 98px;
   align-self: flex-start;
 }
@@ -588,8 +594,10 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  align-self: center;
+  max-width: 350px;
   /* min-height: 118px; */
-  aspect-ratio: 148 / 59;
+  /* aspect-ratio: 148 / 59; */
   padding: var(--size-400) var(--size-600);
   background-color: var(--clr-neutral-100);
 }
@@ -601,7 +609,7 @@ a {
 
   .academic__courses__item__img {
     padding: var(--size-400) var(--size-800);
-    aspect-ratio: 112 / 59;
+    /* aspect-ratio: 112 / 59; */
   }
 }
 
